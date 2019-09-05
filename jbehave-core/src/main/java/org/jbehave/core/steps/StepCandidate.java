@@ -190,9 +190,9 @@ public class StepCandidate {
         String previousNonAndStep = null;
         for (String composedStep : composedSteps) {
             addComposedStep(steps, composedStep, previousNonAndStep, mergedParameters, allCandidates);
-            if (!(keywords.isAndStep(stepAsString) || keywords.isIgnorableStep(stepAsString))) {
+            if (!(keywords.isAndStep(composedStep) || keywords.isIgnorableStep(composedStep))) {
                 // only update previous step if not AND or IGNORABLE step
-                previousNonAndStep = stepAsString;
+                previousNonAndStep = composedStep;
             }
         }
     }
